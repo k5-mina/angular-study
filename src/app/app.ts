@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <iframe [src]="safeUrl"></iframe>
-    `,
+  template: `<table border="1">
+    <tr><td [rowspan]="len">結合</td><td>1</td><tr>
+    <tr><td>2</td><tr>
+    <tr><td>3</td><tr>
+    </table>`,
 })
 export class App {
-  safeUrl: SafeResourceUrl;
-  url = 'http://www.wings.msn.to/';
-
-  // リソースが信頼済みであることをマークする
-  constructor(private sanitizer: DomSanitizer) {
-    this.safeUrl = sanitizer.bypassSecurityTrustResourceUrl(this.url);
-  }
+  len = 3;
 }
