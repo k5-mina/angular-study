@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<table border="1">
-    <tr><td [attr.rowspan]="len">結合</td><td>1</td></tr>
-    <tr><td>2</td></tr>
-    <tr><td>3</td></tr>
-    </table>`,
+  template: `
+    <div class="line back" [class]="clazz">WINGSプロジェクト</div>
+  `,
+  styles: [`
+    .line { border: solid 1px #f00; }
+    .back { background-color: #0ff; }
+    .fore { color: Red; }
+  `]
 })
 export class App {
-  len = 3;
+  clazz = 'fore';
 }
