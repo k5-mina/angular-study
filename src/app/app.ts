@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="line back" [class]="clazz">WINGSプロジェクト</div>
+    <div class="line back" [class.fore]="flag">WINGSプロジェクト</div>
   `,
   styles: [`
     .line { border: solid 1px #f00; }
@@ -12,5 +12,5 @@ import { Component } from '@angular/core';
   `]
 })
 export class App {
-  clazz = 'fore';
+  flag = true;
 }
